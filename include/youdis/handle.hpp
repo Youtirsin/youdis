@@ -139,7 +139,6 @@ class Command {
     }
     return Value::make_array(std::move(values));
   }
-
 };
 
 class Handler {
@@ -148,12 +147,11 @@ class Handler {
     auto req = Serializer::marshal(*request);
     static Aof aof;
     if (request->type != types::ARRAY) {
-      info() << "invalid request type, expected array" << std::endl;
-      return {};
+      throw std::runtime_error("invalid request type, expected array");
     }
 
     if (request->array.empty()) {
-      info() << "invalid request type, expected array length > 0" << std::endl;
+      throw std::runtime_error("invalid request type, expected array length > 0");
       return {};
     }
 
