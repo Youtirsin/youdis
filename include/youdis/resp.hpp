@@ -7,12 +7,12 @@
 
 namespace resp {
 struct types {
-  static const char STRING = '+';
-  static const char ERROR = '-';
-  static const char NIL = 'e';
-  static const char INTEGER = ':';
-  static const char BULK = '$';
-  static const char ARRAY = '*';
+  static constexpr char STRING = '+';
+  static constexpr char ERROR = '-';
+  static constexpr char NIL = 'e';
+  static constexpr char INTEGER = ':';
+  static constexpr char BULK = '$';
+  static constexpr char ARRAY = '*';
 };
 
 // using classes and inherit
